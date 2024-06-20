@@ -46,8 +46,8 @@ export default function TextForm(props) {
   const [text, setText] = useState("");
 
   const wordCount = (text) => {
-    let regex = /\s+/;
-    let numOfWords = text.split(regex);
+   // let regex = /\s+/;
+    let numOfWords = text.split(" ").filter((element)=>{return element.length!==0});
     return numOfWords.length;
 };
   return (
@@ -70,22 +70,22 @@ export default function TextForm(props) {
             rows="8"
           ></textarea>
         </div>
-        <button className="btn btn-primary mx-2" onClick={handleUpClick}>
+        <button className="btn btn-primary mx-2 my-1" onClick={handleUpClick}>
           Convert to Uppercase
         </button>
-        <button className="btn btn-primary mx-2" onClick={handleLoClick}>
+        <button className="btn btn-primary mx-2 my-1" onClick={handleLoClick}>
           Convert to Lowercase
         </button>
-        <button className="btn btn-primary mx-2" onClick={handleClearClick}>
+        <button className="btn btn-primary mx-2 my-1" onClick={handleClearClick}>
           Clear Text
         </button>
-        <button className="btn btn-primary mx-2" onClick={handleReverseClick}>
+        <button className="btn btn-primary mx-2 my-1" onClick={handleReverseClick}>
           Reverse Text
         </button>
-        <button className="btn btn-primary mx-2" onClick={handleCopy}>
+        <button className="btn btn-primary mx-2 my-1" onClick={handleCopy}>
           Copy Text
         </button>
-        <button className="btn btn-primary mx-2" onClick={handleExtraSpace}>
+        <button className="btn btn-primary mx-2 my-1" onClick={handleExtraSpace}>
           Remove Extra Space
         </button>
       </div>
