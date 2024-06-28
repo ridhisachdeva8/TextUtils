@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function Navbar(props) {
   const changeBackgroundColor = (color) => {
@@ -11,12 +11,12 @@ export default function Navbar(props) {
       className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}
     >
       <div className="container-fluid">
-        {/* <Link className="navbar-brand" to="/">
+        <Link className="navbar-brand" to="/">
           {props.title}
-        </Link> */}
-        <a className="navbar-brand" href="#">
+        </Link>
+        {/* <a className="navbar-brand" href="#">
           {props.title}
-        </a>
+        </a> */}
         <button
           className="navbar-toggler"
           type="button"
@@ -31,15 +31,18 @@ export default function Navbar(props) {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              {/* <Link className="nav-link active" aria-current="page" to="/"> */}
-              <a className="nav-link active" aria-current="page" href="#">
+              <Link className="nav-link active" aria-current="page" to="/"> 
+              Home 
+              </Link>
+             
+              {/* <a className="nav-link active" aria-current="page" href="#">
                 Home
-              </a>
+              </a> */}
             </li>
             <li className="nav-item">
-              {/* <Link className="nav-link" to="/about">
+              <Link className="nav-link" to="/about">
                 {props.aboutText}
-              </Link> */}
+              </Link>
             </li>
           </ul>
           {/*<form className="d-flex mx-2" role="search">

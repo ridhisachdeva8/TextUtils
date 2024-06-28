@@ -63,29 +63,29 @@ export default function TextForm(props) {
             value={text}
             onChange={handleOnChange}
             style={{
-              backgroundColor: props.mode === "dark" ? "grey" : "white",
+              backgroundColor: props.mode === "dark" ? "rgb(23, 84, 173)" : "white",
               color: props.mode === "dark" ? "white" : "#022962",
             }}
             id="myBox"
             rows="8"
           ></textarea>
         </div>
-        <button className="btn btn-primary mx-2 my-1" onClick={handleUpClick}>
+        <button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={handleUpClick}>
           Convert to Uppercase
         </button>
-        <button className="btn btn-primary mx-2 my-1" onClick={handleLoClick}>
+        <button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={handleLoClick}>
           Convert to Lowercase
         </button>
-        <button className="btn btn-primary mx-2 my-1" onClick={handleClearClick}>
+        <button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={handleClearClick}>
           Clear Text
         </button>
-        <button className="btn btn-primary mx-2 my-1" onClick={handleReverseClick}>
+        <button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={handleReverseClick}>
           Reverse Text
         </button>
-        <button className="btn btn-primary mx-2 my-1" onClick={handleCopy}>
+        <button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={handleCopy}>
           Copy Text
         </button>
-        <button className="btn btn-primary mx-2 my-1" onClick={handleExtraSpace}>
+        <button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={handleExtraSpace}>
           Remove Extra Space
         </button>
       </div>
@@ -104,7 +104,7 @@ export default function TextForm(props) {
         <p>
           {text.length > 0
             ? text
-            : "Enter something in the textbox above to preview it here"}
+            : "Nothing to Preview"}
         </p>
       </div>
     </>
